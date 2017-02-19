@@ -7,21 +7,14 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 
-CREATE TABLE `wp_enquetes_answers` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `wp_enquetes_answers` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `id_posts` int(11) NOT NULL,
   `indice_answers` int(11) NOT NULL,
-  `answers` varchar(32) NOT NULL
+  `answers` varchar(32) NOT NULL,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-
-ALTER TABLE `wp_enquetes_answers`
-  ADD UNIQUE KEY `ID` (`ID`),
-  ADD UNIQUE KEY `order` (`indice_answers`);
-
-
-ALTER TABLE `wp_enquetes_answers`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
